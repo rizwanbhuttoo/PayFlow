@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f1f0ff;
+  --color-brand-100: #e5e3ff;
+  --color-brand-500: #635bff;
+  --color-brand-600: #5148e5;
+  --color-brand-700: #4338ca;
+  --color-ink: #172033;
+  --color-muted: #697386;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: #f7f8fc; }
+body { margin: 0; min-width: 320px; color: #172033; background: #f7f8fc; }
+button, a, input, select, textarea { transition: all 150ms ease; }
+button:not(:disabled) { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(99,91,255,.25);
+  outline-offset: 2px;
+}
+
+.card {
+  border: 1px solid #e6e9f0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.03);
+}
+.field {
+  width: 100%;
+  border: 1px solid #d9deea;
+  border-radius: 10px;
+  background: white;
+  padding: .72rem .85rem;
+  font-size: .9rem;
+  color: #172033;
+}
+.field:hover { border-color: #b5bdcc; }
+.field:focus { border-color: #635bff; box-shadow: 0 0 0 3px rgba(99,91,255,.1); outline: none; }
+.field-error { border-color: #e5484d; }
+.label { display: block; margin-bottom: .4rem; font-size: .82rem; font-weight: 650; color: #3f485a; }
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: 10px; background: #635bff; padding: .7rem 1rem; color: white;
+  font-size: .88rem; font-weight: 700; box-shadow: 0 4px 12px rgba(99,91,255,.2);
+}
+.btn-primary:hover { background: #5148e5; transform: translateY(-1px); }
+.btn-primary:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border: 1px solid #d9deea; border-radius: 10px; background: white; padding: .68rem 1rem;
+  color: #3f485a; font-size: .88rem; font-weight: 650;
+}
+.btn-secondary:hover { border-color: #b5bdcc; background: #fafbfc; }
+.nav-active { background: #f1f0ff; color: #4338ca; }
+.skeleton { background: linear-gradient(90deg,#eef0f5 25%,#f8f9fb 50%,#eef0f5 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
